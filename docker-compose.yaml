@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  api:
+    build: ./car-app-be
+    container_name: car-app-be-c
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./car-app-be:/node_modules
+  car-app-fe:
+    build: ./car-app-fe
+    container_name: car-app-fe-c
+    ports:
+      - "8080:8080"
+    stdin_open: true
+    tty: true
